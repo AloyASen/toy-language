@@ -42,7 +42,7 @@ extern int yydebug;
 /* "%code requires" blocks.  */
 #line 1 "compiler/grammer.y" /* yacc.c:1909  */
 
-    #include "SyntaxTree/SyntaxTree.hpp"
+    
 
 #line 48 "grammer.tab.h" /* yacc.c:1909  */
 
@@ -51,18 +51,139 @@ extern int yydebug;
 # define YYTOKENTYPE
   enum yytokentype
   {
-    NAME = 258,
-    COLON = 259,
-    RIGHT_ARROW = 260,
-    LEFT_BRACE = 261,
-    RIGHT_BRACE = 262,
-    SEMICOLON = 263
+    END_OF_FILE = 0,
+    CONSOLE = 258,
+    BREAK = 259,
+    CASE = 260,
+    CATCH = 261,
+    CLASS = 262,
+    CONST = 263,
+    CONTINUE = 264,
+    DEBUGGER = 265,
+    DEFAULT = 266,
+    DELETE = 267,
+    DO = 268,
+    ELSE = 269,
+    EXPORT = 270,
+    EXTENDS = 271,
+    FINALLY = 272,
+    FOR = 273,
+    FUNCTION = 274,
+    IF = 275,
+    IMPORT = 276,
+    IN = 277,
+    INSTANCEOF = 278,
+    LET = 279,
+    NEW = 280,
+    OF = 281,
+    RETURN = 282,
+    SUPER = 283,
+    SWITCH = 284,
+    THIS = 285,
+    THROW = 286,
+    TRY = 287,
+    TYPEOF = 288,
+    VAR = 289,
+    VOID = 290,
+    WHILE = 291,
+    WITH = 292,
+    YIELD = 293,
+    ENUM = 294,
+    AWAIT = 295,
+    IMPLEMENTS = 296,
+    INTERFACE = 297,
+    PACKAGE = 298,
+    PRIVATE = 299,
+    PROTECTED = 300,
+    PUBLIC = 301,
+    LITERAL_NULL = 302,
+    LITERAL_TRUE = 303,
+    LITERAL_FALSE = 304,
+    LITERAL_UNDEFINED = 305,
+    LITERAL_NAN = 306,
+    UNARY_ADD = 307,
+    UNARY_SUBTRACT = 308,
+    LOGICAL_NOT = 309,
+    MULTIPLY = 310,
+    DIVIDE = 311,
+    MODULO = 312,
+    ADD = 313,
+    SUBTRACT = 314,
+    EQUAL = 315,
+    NOT_EQUAL = 316,
+    EXACTLY_EQUAL = 317,
+    NOT_EXACTLY_EQUAL = 318,
+    LEFT_SHIFT = 319,
+    SIGNED_RIGHT_SHIFT = 320,
+    UNSIGNED_RIGHT_SHIFT = 321,
+    LESS_THAN = 322,
+    GREATER_THAN = 323,
+    LESS_THAN_OR_EQUAL = 324,
+    GREATER_THAN_OR_EQUAL = 325,
+    QUESTION_MARK = 326,
+    COLON = 327,
+    LOGICAL_AND = 328,
+    LOGICAL_OR = 329,
+    BITWISE_AND = 330,
+    BITWISE_OR = 331,
+    BITWISE_XOR = 332,
+    BITWISE_NOT = 333,
+    ASSIGNMENT = 334,
+    ADDITION_ASSIGNMENT = 335,
+    SUBTRACTION_ASSIGNMENT = 336,
+    MULTIPLICATION_ASSIGNMENT = 337,
+    DIVISION_ASSIGNMENT = 338,
+    MODULUS_ASSIGNMENT = 339,
+    EXPONENTIATION_ASSIGNMENT = 340,
+    LEFT_SHIFT_ASSIGNMENT = 341,
+    SIGNED_RIGHT_SHIFT_ASSIGNMENT = 342,
+    UNSIGNED_RIGHT_SHIFT_ASSIGNMENT = 343,
+    BITWISE_AND_ASSIGNMENT = 344,
+    BITWISE_XOR_ASSIGNMENT = 345,
+    BITWISE_OR_ASSIGNMENT = 346,
+    ARROW_FUNCTION = 347,
+    RIGHT_PAREN = 348,
+    LEFT_PAREN = 349,
+    RIGHT_BRACE = 350,
+    LEFT_BRACE = 351,
+    RIGHT_BRACKET = 352,
+    LEFT_BRACKET = 353,
+    COMMA = 354,
+    FULL_STOP = 355,
+    ELLIPSIS = 356,
+    SEMICOLON = 357,
+    DOUBLE_QUOTE = 358,
+    SINGLE_QUOTE = 359,
+    VALUE_INTEGER = 360,
+    VALUE_DOUBLE = 361,
+    VALUE_STRING = 362,
+    IDENTIFIER = 363,
+    LINE_FEED = 364,
+    CARRIAGE_RETURN = 365,
+    LINE_SEPARATOR = 366,
+    PARAGRAPH_SEPARATOR = 367
   };
 #endif
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef compiler::SyntaxTree * YYSTYPE;
+
+union YYSTYPE
+{
+#line 135 "compiler/grammer.y" /* yacc.c:1909  */
+
+    int int_value;
+    double double_value;
+    char* string_value;
+    bool bool_value;
+    char *char_value;
+
+    variables *store;
+
+#line 184 "grammer.tab.h" /* yacc.c:1909  */
+};
+
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif
