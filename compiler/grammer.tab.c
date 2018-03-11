@@ -64,19 +64,18 @@
 /* Copy the first part of user declarations.  */
 #line 5 "compiler/grammer.y" /* yacc.c:339  */
 
-    #include <iostream>
-    #include <memory>
+    #include <cstdio>
     #include <cstring>
     extern int line;
     extern int column;
 
-    void yyerror(char *);
+    void yyerror(const char *s);
     extern char * yytext;
     int yylex(void);
     
 
 
-#line 80 "grammer.tab.c" /* yacc.c:339  */
+#line 79 "grammer.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -110,7 +109,7 @@ extern int yydebug;
 
     
 
-#line 114 "grammer.tab.c" /* yacc.c:355  */
+#line 113 "grammer.tab.c" /* yacc.c:355  */
 
 /* Token type.  */
 #ifndef YYTOKENTYPE
@@ -236,17 +235,17 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 135 "compiler/grammer.y" /* yacc.c:355  */
+#line 133 "compiler/grammer.y" /* yacc.c:355  */
 
-    int int_value;
+int int_value;
     double double_value;
     char* string_value;
     bool bool_value;
     char *char_value;
 
-    variables *store;
+//    variables *store;
 
-#line 250 "grammer.tab.c" /* yacc.c:355  */
+#line 249 "grammer.tab.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -263,7 +262,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 267 "grammer.tab.c" /* yacc.c:358  */
+#line 266 "grammer.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -572,42 +571,42 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,   182,   182,   184,   188,   215,   216,   220,   221,   222,
-     226,   227,   228,   236,   244,   245,   253,   260,   261,   265,
-     274,   290,   291,   295,   296,   300,   301,   305,   313,   314,
-     315,   316,   317,   318,   319,   320,   323,   327,   328,   329,
-     330,   338,   339,   340,   341,   349,   350,   351,   352,   353,
-     357,   358,   359,   360,   361,   362,   363,   364,   368,   369,
-     373,   381,   382,   383,   387,   388,   392,   393,   394,   395,
-     399,   400,   404,   405,   406,   410,   414,   418,   419,   435,
-     436,   437,   439,   441,   445,   446,   457,   458,   462,   463,
-     464,   465,   466,   471,   475,   476,   480,   481,   482,   483,
-     487,   488,   496,   506,   507,   508,   509,   510,   511,   512,
-     513,   514,   515,   523,   524,   528,   529,   530,   538,   539,
-     540,   548,   549,   550,   551,   559,   560,   561,   562,   563,
-     564,   578,   579,   580,   581,   582,   590,   591,   595,   596,
-     600,   601,   609,   610,   614,   615,   623,   624,   632,   633,
-     634,   635,   636,   640,   641,   642,   643,   644,   645,   646,
-     647,   648,   649,   650,   658,   659,   667,   668,   669,   670,
-     671,   672,   673,   674,   675,   676,   677,   678,   679,   680,
-     684,   685,   686,   687,   688,   692,   693,   697,   698,   706,
-     710,   711,   715,   716,   720,   721,   729,   733,   734,   738,
-     739,   743,   744,   745,   753,   757,   758,   762,   763,   764,
-     772,   773,   777,   778,   779,   783,   784,   785,   786,   787,
-     788,   789,   790,   794,   795,   799,   800,   804,   805,   809,
-     810,   814,   815,   816,   820,   821,   825,   833,   842,   851,
-     852,   860,   861,   862,   864,   865,   866,   868,   869,   870,
-     871,   872,   873,   877,   881,   882,   890,   891,   899,   900,
-     908,   909,   917,   925,   929,   930,   931,   932,   933,   937,
-     938,   942,   943,   947,   948,   956,   960,   961,   969,   977,
-     978,   979,   983,   987,   991,   992,   999,  1007,  1008,  1012,
-    1013,  1017,  1020,  1022,  1026,  1027,  1028,  1032,  1033,  1037,
-    1041,  1045,  1048,  1050,  1058,  1062,  1063,  1068,  1069,  1077,
-    1078,  1079,  1080,  1084,  1092,  1096,  1097,  1101,  1102,  1106,
-    1110,  1111,  1112,  1120,  1121,  1125,  1126,  1130,  1131,  1132,
-    1133,  1137,  1141,  1145,  1146,  1150,  1151,  1152,  1211,  1225,
-    1237,  1238,  1239,  1240,  1241,  1242,  1243,  1245,  1249,  1250,
-    1251,  1255,  1256,  1260,  1261
+       0,   180,   180,   182,   186,   213,   214,   218,   219,   220,
+     224,   225,   226,   234,   242,   243,   251,   258,   259,   263,
+     272,   288,   289,   293,   294,   298,   299,   303,   311,   312,
+     313,   314,   315,   316,   317,   318,   321,   325,   326,   327,
+     328,   336,   337,   338,   339,   347,   348,   349,   350,   351,
+     355,   356,   357,   358,   359,   360,   361,   362,   366,   367,
+     371,   379,   380,   381,   385,   386,   390,   391,   392,   393,
+     397,   398,   402,   403,   404,   408,   412,   416,   417,   433,
+     434,   435,   437,   439,   443,   444,   455,   456,   460,   461,
+     462,   463,   464,   469,   473,   474,   478,   479,   480,   481,
+     485,   486,   494,   504,   505,   506,   507,   508,   509,   510,
+     511,   512,   513,   521,   522,   526,   527,   528,   536,   537,
+     538,   546,   547,   548,   549,   557,   558,   559,   560,   561,
+     562,   576,   577,   578,   579,   580,   588,   589,   593,   594,
+     598,   599,   607,   608,   612,   613,   621,   622,   630,   631,
+     632,   633,   634,   638,   639,   640,   641,   642,   643,   644,
+     645,   646,   647,   648,   656,   657,   665,   666,   667,   668,
+     669,   670,   671,   672,   673,   674,   675,   676,   677,   678,
+     682,   683,   684,   685,   686,   690,   691,   695,   696,   704,
+     708,   709,   713,   714,   718,   719,   727,   731,   732,   736,
+     737,   741,   742,   743,   751,   755,   756,   760,   761,   762,
+     770,   771,   775,   776,   777,   781,   782,   783,   784,   785,
+     786,   787,   788,   792,   793,   797,   798,   802,   803,   807,
+     808,   812,   813,   814,   818,   819,   823,   831,   840,   849,
+     850,   858,   859,   860,   862,   863,   864,   866,   867,   868,
+     869,   870,   871,   875,   879,   880,   888,   889,   897,   898,
+     906,   907,   915,   923,   927,   928,   929,   930,   931,   935,
+     936,   940,   941,   945,   946,   954,   958,   959,   967,   975,
+     976,   977,   981,   985,   989,   990,   997,  1005,  1006,  1010,
+    1011,  1015,  1018,  1020,  1024,  1025,  1026,  1030,  1031,  1035,
+    1039,  1043,  1046,  1048,  1056,  1060,  1061,  1066,  1067,  1075,
+    1076,  1077,  1078,  1082,  1090,  1094,  1095,  1099,  1100,  1104,
+    1108,  1109,  1110,  1118,  1119,  1123,  1124,  1128,  1129,  1130,
+    1131,  1135,  1139,  1143,  1144,  1148,  1149,  1150,  1209,  1223,
+    1235,  1236,  1237,  1238,  1239,  1240,  1241,  1243,  1247,  1248,
+    1249,  1253,  1254,  1258,  1259
 };
 #endif
 
@@ -2376,655 +2375,655 @@ yyreduce:
   switch (yyn)
     {
         case 5:
-#line 215 "compiler/grammer.y" /* yacc.c:1646  */
+#line 213 "compiler/grammer.y" /* yacc.c:1646  */
     { (yyval.string_value) = (yyvsp[0].string_value); }
-#line 2382 "grammer.tab.c" /* yacc.c:1646  */
+#line 2381 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 216 "compiler/grammer.y" /* yacc.c:1646  */
+#line 214 "compiler/grammer.y" /* yacc.c:1646  */
     { (yyval.string_value) = (yyvsp[-1].string_value); }
-#line 2388 "grammer.tab.c" /* yacc.c:1646  */
+#line 2387 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 220 "compiler/grammer.y" /* yacc.c:1646  */
+#line 218 "compiler/grammer.y" /* yacc.c:1646  */
     { (yyval.string_value) = (yyvsp[0].string_value); }
-#line 2394 "grammer.tab.c" /* yacc.c:1646  */
+#line 2393 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 221 "compiler/grammer.y" /* yacc.c:1646  */
+#line 219 "compiler/grammer.y" /* yacc.c:1646  */
     { (yyval.string_value) = (yyvsp[0].string_value); }
-#line 2400 "grammer.tab.c" /* yacc.c:1646  */
+#line 2399 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 222 "compiler/grammer.y" /* yacc.c:1646  */
+#line 220 "compiler/grammer.y" /* yacc.c:1646  */
     { (yyval.string_value) = (yyvsp[0].string_value); }
-#line 2406 "grammer.tab.c" /* yacc.c:1646  */
+#line 2405 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 226 "compiler/grammer.y" /* yacc.c:1646  */
+#line 224 "compiler/grammer.y" /* yacc.c:1646  */
     { (yyval.string_value) = (yyvsp[0].string_value); }
-#line 2412 "grammer.tab.c" /* yacc.c:1646  */
+#line 2411 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 227 "compiler/grammer.y" /* yacc.c:1646  */
+#line 225 "compiler/grammer.y" /* yacc.c:1646  */
     { (yyval.string_value) = (yyvsp[0].string_value); }
-#line 2418 "grammer.tab.c" /* yacc.c:1646  */
+#line 2417 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 228 "compiler/grammer.y" /* yacc.c:1646  */
+#line 226 "compiler/grammer.y" /* yacc.c:1646  */
     { (yyval.string_value) = (yyvsp[0].string_value); }
-#line 2424 "grammer.tab.c" /* yacc.c:1646  */
+#line 2423 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 244 "compiler/grammer.y" /* yacc.c:1646  */
+#line 242 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("boolean,%d,%d,%d\n", line, 4, column); }
-#line 2430 "grammer.tab.c" /* yacc.c:1646  */
+#line 2429 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 245 "compiler/grammer.y" /* yacc.c:1646  */
+#line 243 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("boolean,%d,%d,%d\n", line, 5, column); }
-#line 2436 "grammer.tab.c" /* yacc.c:1646  */
+#line 2435 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 22:
-#line 291 "compiler/grammer.y" /* yacc.c:1646  */
+#line 289 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2442 "grammer.tab.c" /* yacc.c:1646  */
+#line 2441 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 23:
-#line 295 "compiler/grammer.y" /* yacc.c:1646  */
+#line 293 "compiler/grammer.y" /* yacc.c:1646  */
     { (yyval.string_value) = (yyvsp[0].string_value); }
-#line 2448 "grammer.tab.c" /* yacc.c:1646  */
+#line 2447 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 24:
-#line 296 "compiler/grammer.y" /* yacc.c:1646  */
+#line 294 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2454 "grammer.tab.c" /* yacc.c:1646  */
+#line 2453 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 26:
-#line 301 "compiler/grammer.y" /* yacc.c:1646  */
+#line 299 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2460 "grammer.tab.c" /* yacc.c:1646  */
+#line 2459 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 27:
-#line 305 "compiler/grammer.y" /* yacc.c:1646  */
+#line 303 "compiler/grammer.y" /* yacc.c:1646  */
     { (yyval.string_value) = (yyvsp[0].string_value); }
-#line 2466 "grammer.tab.c" /* yacc.c:1646  */
+#line 2465 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 28:
-#line 313 "compiler/grammer.y" /* yacc.c:1646  */
+#line 311 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2472 "grammer.tab.c" /* yacc.c:1646  */
+#line 2471 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 70:
-#line 399 "compiler/grammer.y" /* yacc.c:1646  */
+#line 397 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("property_name,%d,%lu,%d\n", line, strlen((yyvsp[0].string_value)), column); }
-#line 2478 "grammer.tab.c" /* yacc.c:1646  */
+#line 2477 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 77:
-#line 418 "compiler/grammer.y" /* yacc.c:1646  */
+#line 416 "compiler/grammer.y" /* yacc.c:1646  */
     { (yyval.string_value) = (yyvsp[0].string_value); }
-#line 2484 "grammer.tab.c" /* yacc.c:1646  */
+#line 2483 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 78:
-#line 419 "compiler/grammer.y" /* yacc.c:1646  */
+#line 417 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2490 "grammer.tab.c" /* yacc.c:1646  */
+#line 2489 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 82:
-#line 439 "compiler/grammer.y" /* yacc.c:1646  */
+#line 437 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2496 "grammer.tab.c" /* yacc.c:1646  */
+#line 2495 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 83:
-#line 441 "compiler/grammer.y" /* yacc.c:1646  */
+#line 439 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2502 "grammer.tab.c" /* yacc.c:1646  */
+#line 2501 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 87:
-#line 458 "compiler/grammer.y" /* yacc.c:1646  */
+#line 456 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- new expression at line%d\n", line); }
-#line 2508 "grammer.tab.c" /* yacc.c:1646  */
+#line 2507 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 95:
-#line 476 "compiler/grammer.y" /* yacc.c:1646  */
+#line 474 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- (ARGS) at line %d\n", line); }
-#line 2514 "grammer.tab.c" /* yacc.c:1646  */
+#line 2513 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 104:
-#line 507 "compiler/grammer.y" /* yacc.c:1646  */
+#line 505 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- DELETE at line %d\n", line); }
-#line 2520 "grammer.tab.c" /* yacc.c:1646  */
+#line 2519 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 105:
-#line 508 "compiler/grammer.y" /* yacc.c:1646  */
+#line 506 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- VOID at line %d\n", line); }
-#line 2526 "grammer.tab.c" /* yacc.c:1646  */
+#line 2525 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 106:
-#line 509 "compiler/grammer.y" /* yacc.c:1646  */
+#line 507 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- TYPEOF at line %d\n", line); }
-#line 2532 "grammer.tab.c" /* yacc.c:1646  */
+#line 2531 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 107:
-#line 510 "compiler/grammer.y" /* yacc.c:1646  */
+#line 508 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- UNARY_ADD at line %d\n", line); }
-#line 2538 "grammer.tab.c" /* yacc.c:1646  */
+#line 2537 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 108:
-#line 511 "compiler/grammer.y" /* yacc.c:1646  */
+#line 509 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- UNARY_SUBTRACT at line %d\n", line); }
-#line 2544 "grammer.tab.c" /* yacc.c:1646  */
+#line 2543 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 109:
-#line 512 "compiler/grammer.y" /* yacc.c:1646  */
+#line 510 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- ADD at line %d\n", line); }
-#line 2550 "grammer.tab.c" /* yacc.c:1646  */
+#line 2549 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 110:
-#line 513 "compiler/grammer.y" /* yacc.c:1646  */
+#line 511 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("subtract,%d,%d,%d\n", line, 1, column); }
-#line 2556 "grammer.tab.c" /* yacc.c:1646  */
+#line 2555 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 111:
-#line 514 "compiler/grammer.y" /* yacc.c:1646  */
+#line 512 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- BITWISE_NOT at line %d\n", line); }
-#line 2562 "grammer.tab.c" /* yacc.c:1646  */
+#line 2561 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 112:
-#line 515 "compiler/grammer.y" /* yacc.c:1646  */
+#line 513 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- LOGICAL_NOT at line %d\n", line); }
-#line 2568 "grammer.tab.c" /* yacc.c:1646  */
+#line 2567 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 115:
-#line 528 "compiler/grammer.y" /* yacc.c:1646  */
+#line 526 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- MULTIPLY at line %d\n", line); }
-#line 2574 "grammer.tab.c" /* yacc.c:1646  */
+#line 2573 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 116:
-#line 529 "compiler/grammer.y" /* yacc.c:1646  */
+#line 527 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- DIVIDE at line %d\n", line); }
-#line 2580 "grammer.tab.c" /* yacc.c:1646  */
+#line 2579 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 117:
-#line 530 "compiler/grammer.y" /* yacc.c:1646  */
+#line 528 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- MODULO at line %d\n", line); }
-#line 2586 "grammer.tab.c" /* yacc.c:1646  */
+#line 2585 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 119:
-#line 539 "compiler/grammer.y" /* yacc.c:1646  */
+#line 537 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- BINARY ADD at line %d\n", line); }
-#line 2592 "grammer.tab.c" /* yacc.c:1646  */
+#line 2591 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 120:
-#line 540 "compiler/grammer.y" /* yacc.c:1646  */
+#line 538 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- BINARY SUBTRACT at line %d\n", line); }
-#line 2598 "grammer.tab.c" /* yacc.c:1646  */
+#line 2597 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 122:
-#line 549 "compiler/grammer.y" /* yacc.c:1646  */
+#line 547 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- LEFT_SHIFT at line %d\n", line); }
-#line 2604 "grammer.tab.c" /* yacc.c:1646  */
+#line 2603 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 123:
-#line 550 "compiler/grammer.y" /* yacc.c:1646  */
+#line 548 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- SIGNED_RIGHT_SHIFT at line %d\n", line); }
-#line 2610 "grammer.tab.c" /* yacc.c:1646  */
+#line 2609 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 124:
-#line 551 "compiler/grammer.y" /* yacc.c:1646  */
+#line 549 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- UNSIGNED_RIGHT_SHIFT at line %d\n", line); }
-#line 2616 "grammer.tab.c" /* yacc.c:1646  */
+#line 2615 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 126:
-#line 560 "compiler/grammer.y" /* yacc.c:1646  */
+#line 558 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- LESS_THAN at line %d\n", line); }
-#line 2622 "grammer.tab.c" /* yacc.c:1646  */
+#line 2621 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 127:
-#line 561 "compiler/grammer.y" /* yacc.c:1646  */
+#line 559 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- GREATER_THAN at line %d\n", line); }
-#line 2628 "grammer.tab.c" /* yacc.c:1646  */
+#line 2627 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 128:
-#line 562 "compiler/grammer.y" /* yacc.c:1646  */
+#line 560 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- LESS_THAN_OR_EQUAL at line %d\n", line); }
-#line 2634 "grammer.tab.c" /* yacc.c:1646  */
+#line 2633 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 129:
-#line 563 "compiler/grammer.y" /* yacc.c:1646  */
+#line 561 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- GREATER_THAN_OR_EQUAL at line %d\n", line); }
-#line 2640 "grammer.tab.c" /* yacc.c:1646  */
+#line 2639 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 130:
-#line 564 "compiler/grammer.y" /* yacc.c:1646  */
+#line 562 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- INSTANCEOF at line %d\n", line); }
-#line 2646 "grammer.tab.c" /* yacc.c:1646  */
+#line 2645 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 137:
-#line 591 "compiler/grammer.y" /* yacc.c:1646  */
+#line 589 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- BITWISE_AND at line %d\n", line);  }
-#line 2652 "grammer.tab.c" /* yacc.c:1646  */
+#line 2651 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 139:
-#line 596 "compiler/grammer.y" /* yacc.c:1646  */
+#line 594 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- BITWISE_XOR at line %d\n", line);  }
-#line 2658 "grammer.tab.c" /* yacc.c:1646  */
+#line 2657 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 141:
-#line 601 "compiler/grammer.y" /* yacc.c:1646  */
+#line 599 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- BITWISE_OR at line %d\n", line);  }
-#line 2664 "grammer.tab.c" /* yacc.c:1646  */
+#line 2663 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 143:
-#line 610 "compiler/grammer.y" /* yacc.c:1646  */
+#line 608 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- LOGICAL_AND at line %d\n", line); }
-#line 2670 "grammer.tab.c" /* yacc.c:1646  */
+#line 2669 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 145:
-#line 615 "compiler/grammer.y" /* yacc.c:1646  */
+#line 613 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- LOGICAL_OR at line %d\n", line); }
-#line 2676 "grammer.tab.c" /* yacc.c:1646  */
+#line 2675 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 147:
-#line 624 "compiler/grammer.y" /* yacc.c:1646  */
+#line 622 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("ConditionalExpression at line %d\n", line); }
-#line 2682 "grammer.tab.c" /* yacc.c:1646  */
+#line 2681 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 151:
-#line 635 "compiler/grammer.y" /* yacc.c:1646  */
+#line 633 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- ASSIGNMENT at line %d\n", line); }
-#line 2688 "grammer.tab.c" /* yacc.c:1646  */
+#line 2687 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 152:
-#line 636 "compiler/grammer.y" /* yacc.c:1646  */
+#line 634 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- ASSIGNMENT with OPERATOR at line %d\n", line); }
-#line 2694 "grammer.tab.c" /* yacc.c:1646  */
+#line 2693 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 153:
-#line 640 "compiler/grammer.y" /* yacc.c:1646  */
+#line 638 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- MULTIPLICATION_ASSIGNMENT at line %d\n", line);  }
-#line 2700 "grammer.tab.c" /* yacc.c:1646  */
+#line 2699 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 154:
-#line 641 "compiler/grammer.y" /* yacc.c:1646  */
+#line 639 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- DIVISION_ASSIGNMENT at line %d\n", line);  }
-#line 2706 "grammer.tab.c" /* yacc.c:1646  */
+#line 2705 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 155:
-#line 642 "compiler/grammer.y" /* yacc.c:1646  */
+#line 640 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- MODULUS_ASSIGNMENT at line %d\n", line);  }
-#line 2712 "grammer.tab.c" /* yacc.c:1646  */
+#line 2711 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 156:
-#line 643 "compiler/grammer.y" /* yacc.c:1646  */
+#line 641 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- ADDITION_ASSIGNMENT at line %d\n", line);  }
-#line 2718 "grammer.tab.c" /* yacc.c:1646  */
+#line 2717 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 157:
-#line 644 "compiler/grammer.y" /* yacc.c:1646  */
+#line 642 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- SUBTRACTION_ASSIGNMENT at line %d\n", line);  }
-#line 2724 "grammer.tab.c" /* yacc.c:1646  */
+#line 2723 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 158:
-#line 645 "compiler/grammer.y" /* yacc.c:1646  */
+#line 643 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- LEFT_SHIFT_ASSIGNMENT at line %d\n", line);  }
-#line 2730 "grammer.tab.c" /* yacc.c:1646  */
+#line 2729 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 159:
-#line 646 "compiler/grammer.y" /* yacc.c:1646  */
+#line 644 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- SIGNED_RIGHT_SHIFT_ASSIGNMENT at line %d\n", line);  }
-#line 2736 "grammer.tab.c" /* yacc.c:1646  */
+#line 2735 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 160:
-#line 647 "compiler/grammer.y" /* yacc.c:1646  */
+#line 645 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- UNSIGNED_RIGHT_SHIFT_ASSIGNMENT at line %d\n", line);  }
-#line 2742 "grammer.tab.c" /* yacc.c:1646  */
+#line 2741 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 161:
-#line 648 "compiler/grammer.y" /* yacc.c:1646  */
+#line 646 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- BITWISE_AND_ASSIGNMENT at line %d\n", line);  }
-#line 2748 "grammer.tab.c" /* yacc.c:1646  */
+#line 2747 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 162:
-#line 649 "compiler/grammer.y" /* yacc.c:1646  */
+#line 647 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- BITWISE_XOR_ASSIGNMENT at line %d\n", line);  }
-#line 2754 "grammer.tab.c" /* yacc.c:1646  */
+#line 2753 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 163:
-#line 650 "compiler/grammer.y" /* yacc.c:1646  */
+#line 648 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- BITWISE_OR_ASSIGNMENT at line %d\n", line);  }
-#line 2760 "grammer.tab.c" /* yacc.c:1646  */
+#line 2759 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 166:
-#line 667 "compiler/grammer.y" /* yacc.c:1646  */
+#line 665 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2766 "grammer.tab.c" /* yacc.c:1646  */
+#line 2765 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 167:
-#line 668 "compiler/grammer.y" /* yacc.c:1646  */
+#line 666 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2772 "grammer.tab.c" /* yacc.c:1646  */
+#line 2771 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 168:
-#line 669 "compiler/grammer.y" /* yacc.c:1646  */
+#line 667 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2778 "grammer.tab.c" /* yacc.c:1646  */
+#line 2777 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 169:
-#line 670 "compiler/grammer.y" /* yacc.c:1646  */
+#line 668 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2784 "grammer.tab.c" /* yacc.c:1646  */
+#line 2783 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 171:
-#line 672 "compiler/grammer.y" /* yacc.c:1646  */
+#line 670 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2790 "grammer.tab.c" /* yacc.c:1646  */
+#line 2789 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 172:
-#line 673 "compiler/grammer.y" /* yacc.c:1646  */
+#line 671 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2796 "grammer.tab.c" /* yacc.c:1646  */
+#line 2795 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 173:
-#line 674 "compiler/grammer.y" /* yacc.c:1646  */
+#line 672 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2802 "grammer.tab.c" /* yacc.c:1646  */
+#line 2801 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 174:
-#line 675 "compiler/grammer.y" /* yacc.c:1646  */
+#line 673 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2808 "grammer.tab.c" /* yacc.c:1646  */
+#line 2807 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 175:
-#line 676 "compiler/grammer.y" /* yacc.c:1646  */
+#line 674 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2814 "grammer.tab.c" /* yacc.c:1646  */
+#line 2813 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 176:
-#line 677 "compiler/grammer.y" /* yacc.c:1646  */
+#line 675 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2820 "grammer.tab.c" /* yacc.c:1646  */
+#line 2819 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 177:
-#line 678 "compiler/grammer.y" /* yacc.c:1646  */
+#line 676 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2826 "grammer.tab.c" /* yacc.c:1646  */
+#line 2825 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 178:
-#line 679 "compiler/grammer.y" /* yacc.c:1646  */
+#line 677 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2832 "grammer.tab.c" /* yacc.c:1646  */
+#line 2831 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 179:
-#line 680 "compiler/grammer.y" /* yacc.c:1646  */
+#line 678 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2838 "grammer.tab.c" /* yacc.c:1646  */
+#line 2837 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 184:
-#line 688 "compiler/grammer.y" /* yacc.c:1646  */
-    { printf("$%s:%s;\n", (yyvsp[-2].string_value), getvar((yyvsp[-2].string_value))); }
-#line 2844 "grammer.tab.c" /* yacc.c:1646  */
+#line 686 "compiler/grammer.y" /* yacc.c:1646  */
+    { printf("$%s:%s;\n", (yyvsp[-2].string_value), "this is getvar"); }
+#line 2843 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 190:
-#line 710 "compiler/grammer.y" /* yacc.c:1646  */
+#line 708 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- {BLOCK} at line %d\n", line); }
-#line 2850 "grammer.tab.c" /* yacc.c:1646  */
+#line 2849 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 201:
-#line 743 "compiler/grammer.y" /* yacc.c:1646  */
-    { (yyval.store) = putvar((yyvsp[0].string_value), "undefined"); }
-#line 2856 "grammer.tab.c" /* yacc.c:1646  */
+#line 741 "compiler/grammer.y" /* yacc.c:1646  */
+    { /* $$ = putvar($1, "undefined"); */ }
+#line 2855 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 202:
-#line 744 "compiler/grammer.y" /* yacc.c:1646  */
-    { (yyval.store) = putvar((yyvsp[-1].string_value), (yyvsp[0].string_value)); }
-#line 2862 "grammer.tab.c" /* yacc.c:1646  */
+#line 742 "compiler/grammer.y" /* yacc.c:1646  */
+    { /* $$ = putvar($1, $2); */ }
+#line 2861 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 203:
-#line 745 "compiler/grammer.y" /* yacc.c:1646  */
+#line 743 "compiler/grammer.y" /* yacc.c:1646  */
     { /* not supported yet */ }
-#line 2868 "grammer.tab.c" /* yacc.c:1646  */
+#line 2867 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 207:
-#line 762 "compiler/grammer.y" /* yacc.c:1646  */
-    { (yyval.store) = putvar((yyvsp[0].string_value), "undefined"); }
-#line 2874 "grammer.tab.c" /* yacc.c:1646  */
+#line 760 "compiler/grammer.y" /* yacc.c:1646  */
+    { /* $$ = putvar($1, "undefined");  */ }
+#line 2873 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 208:
-#line 763 "compiler/grammer.y" /* yacc.c:1646  */
-    { (yyval.store) = putvar((yyvsp[-1].string_value), (yyvsp[0].string_value)); }
-#line 2880 "grammer.tab.c" /* yacc.c:1646  */
+#line 761 "compiler/grammer.y" /* yacc.c:1646  */
+    { /* $$ = putvar($1, $2);  */ }
+#line 2879 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 209:
-#line 764 "compiler/grammer.y" /* yacc.c:1646  */
+#line 762 "compiler/grammer.y" /* yacc.c:1646  */
     { /* not supported yet */ }
-#line 2886 "grammer.tab.c" /* yacc.c:1646  */
+#line 2885 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 210:
-#line 772 "compiler/grammer.y" /* yacc.c:1646  */
+#line 770 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2892 "grammer.tab.c" /* yacc.c:1646  */
+#line 2891 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 211:
-#line 773 "compiler/grammer.y" /* yacc.c:1646  */
+#line 771 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2898 "grammer.tab.c" /* yacc.c:1646  */
+#line 2897 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 239:
-#line 851 "compiler/grammer.y" /* yacc.c:1646  */
+#line 849 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- IF ELSE at line %d\n", line); }
-#line 2904 "grammer.tab.c" /* yacc.c:1646  */
+#line 2903 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 240:
-#line 852 "compiler/grammer.y" /* yacc.c:1646  */
+#line 850 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- IF at line %d\n", line); }
-#line 2910 "grammer.tab.c" /* yacc.c:1646  */
+#line 2909 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 275:
-#line 956 "compiler/grammer.y" /* yacc.c:1646  */
+#line 954 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- STATEMENT (:) at line %d\n", line); }
-#line 2916 "grammer.tab.c" /* yacc.c:1646  */
+#line 2915 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 278:
-#line 969 "compiler/grammer.y" /* yacc.c:1646  */
+#line 967 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("THROW at line %d\n", line); }
-#line 2922 "grammer.tab.c" /* yacc.c:1646  */
+#line 2921 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 289:
-#line 1012 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1010 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2928 "grammer.tab.c" /* yacc.c:1646  */
+#line 2927 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 290:
-#line 1013 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1011 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2934 "grammer.tab.c" /* yacc.c:1646  */
+#line 2933 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 304:
-#line 1058 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1056 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- ArrowFunction at line %d\n", line); }
-#line 2940 "grammer.tab.c" /* yacc.c:1646  */
+#line 2939 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 310:
-#line 1078 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1076 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2946 "grammer.tab.c" /* yacc.c:1646  */
+#line 2945 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 311:
-#line 1079 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1077 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2952 "grammer.tab.c" /* yacc.c:1646  */
+#line 2951 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 312:
-#line 1080 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1078 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2958 "grammer.tab.c" /* yacc.c:1646  */
+#line 2957 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 317:
-#line 1101 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1099 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2964 "grammer.tab.c" /* yacc.c:1646  */
+#line 2963 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 318:
-#line 1102 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1100 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2970 "grammer.tab.c" /* yacc.c:1646  */
+#line 2969 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 320:
-#line 1110 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1108 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2976 "grammer.tab.c" /* yacc.c:1646  */
+#line 2975 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 321:
-#line 1111 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1109 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2982 "grammer.tab.c" /* yacc.c:1646  */
+#line 2981 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 322:
-#line 1112 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1110 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 2988 "grammer.tab.c" /* yacc.c:1646  */
+#line 2987 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 324:
-#line 1121 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1119 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- ClassDeclaration at line %d\n", line); }
-#line 2994 "grammer.tab.c" /* yacc.c:1646  */
+#line 2993 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 325:
-#line 1125 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1123 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 3000 "grammer.tab.c" /* yacc.c:1646  */
+#line 2999 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 326:
-#line 1126 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1124 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- ClassExpression at line %d\n", line); }
-#line 3006 "grammer.tab.c" /* yacc.c:1646  */
+#line 3005 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 331:
-#line 1137 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1135 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- ClassHeritage at line %d\n", line); }
-#line 3012 "grammer.tab.c" /* yacc.c:1646  */
+#line 3011 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 332:
-#line 1141 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1139 "compiler/grammer.y" /* yacc.c:1646  */
     { printf("- ClassBody at line %d\n", line); }
-#line 3018 "grammer.tab.c" /* yacc.c:1646  */
+#line 3017 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 338:
-#line 1211 "compiler/grammer.y" /* yacc.c:1646  */
+#line 1209 "compiler/grammer.y" /* yacc.c:1646  */
     {}
-#line 3024 "grammer.tab.c" /* yacc.c:1646  */
+#line 3023 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 3028 "grammer.tab.c" /* yacc.c:1646  */
+#line 3027 "grammer.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -3252,7 +3251,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 1264 "compiler/grammer.y" /* yacc.c:1906  */
+#line 1262 "compiler/grammer.y" /* yacc.c:1906  */
 
 
 void yyerror(char *s) {

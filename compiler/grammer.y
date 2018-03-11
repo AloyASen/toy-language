@@ -3,13 +3,12 @@
 }
 
 %{
-    #include <iostream>
-    #include <memory>
+    #include <cstdio>
     #include <cstring>
     extern int line;
     extern int column;
 
-    void yyerror(char *);
+    void yyerror(const char *s);
     extern char * yytext;
     int yylex(void);
     
@@ -131,15 +130,14 @@
 %token LINE_SEPARATOR
 %token PARAGRAPH_SEPARATOR
 
-
 %union {
-    int int_value;
+int int_value;
     double double_value;
     char* string_value;
     bool bool_value;
     char *char_value;
 
-    variables *store;
+//    variables *store;
 }
 
 %error-verbose
@@ -685,7 +683,7 @@ Statement:
     | ClassDeclaration
     | LexicalDeclaration
     | ExportDeclaration
-    | CONSOLE LEFT_PAREN BindingIdentifier RIGHT_PAREN SEMICOLON { printf("$%s:%s;\n", $3, getvar($3)); }
+    | CONSOLE LEFT_PAREN BindingIdentifier RIGHT_PAREN SEMICOLON { printf("$%s:%s;\n", $3, "this is getvar"); }
     ;
 
  HoistableDeclaration:
@@ -740,8 +738,8 @@ BindingList:
     ;
 
 LexicalBinding:
-    BindingIdentifier { $$ = putvar($1, "undefined"); }
-    | BindingIdentifier Initialiser { $$ = putvar($1, $2); }
+    BindingIdentifier { /* $$ = putvar($1, "undefined"); */ }
+    | BindingIdentifier Initialiser { /* $$ = putvar($1, $2); */ }
     | BindingPattern Initialiser { /* not supported yet */ }
     ;
 
@@ -759,8 +757,8 @@ VariableDeclarationList:
     ;
 
 VariableDeclaration:
-    BindingIdentifier { $$ = putvar($1, "undefined"); }
-    | BindingIdentifier Initialiser { $$ = putvar($1, $2); }
+    BindingIdentifier { /* $$ = putvar($1, "undefined");  */ }
+    | BindingIdentifier Initialiser { /* $$ = putvar($1, $2);  */ }
     | BindingPattern Initialiser { /* not supported yet */ }
     ;
 

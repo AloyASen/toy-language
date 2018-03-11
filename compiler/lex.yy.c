@@ -660,18 +660,16 @@ char *yytext;
 #line 1 "compiler/lex.l"
 #line 3 "compiler/lex.l"
     #include "grammer.tab.h"
-    #include "SyntaxTree/Includes.hpp"
-    #include <memory>
-    
+    #include <cstdlib>
     char* stringbuffer;
     int column = 0;
     int line = 0;
     char error_buffer[256];
-    variables *identifier(char *identifier_name);
+   // variables *identifier(char *identifier_name);
+extern void yyerror(const char *s);
+void count();
 
-void count()
-
-#line 675 "lex.yy.c"
+#line 673 "lex.yy.c"
 
 #define INITIAL 0
 #define MULTILINE_STRING 1
@@ -890,7 +888,7 @@ YY_DECL
 		}
 
 	{
-#line 27 "compiler/lex.l"
+#line 25 "compiler/lex.l"
 
 
 
@@ -898,7 +896,7 @@ YY_DECL
 
 
 
-#line 902 "lex.yy.c"
+#line 900 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -958,544 +956,544 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 34 "compiler/lex.l"
+#line 32 "compiler/lex.l"
 { count(); }
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 36 "compiler/lex.l"
+#line 34 "compiler/lex.l"
 { /* Multiline comment */ }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 37 "compiler/lex.l"
+#line 35 "compiler/lex.l"
 { /* one-line one */ }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 39 "compiler/lex.l"
+#line 37 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return CONSOLE; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 40 "compiler/lex.l"
+#line 38 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return BREAK; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 41 "compiler/lex.l"
+#line 39 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return CASE; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 42 "compiler/lex.l"
+#line 40 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return CATCH; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 43 "compiler/lex.l"
+#line 41 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return CLASS; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 44 "compiler/lex.l"
+#line 42 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return CONST; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 45 "compiler/lex.l"
+#line 43 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return CONTINUE; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 46 "compiler/lex.l"
+#line 44 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return DEBUGGER; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 47 "compiler/lex.l"
+#line 45 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return DEFAULT; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 48 "compiler/lex.l"
+#line 46 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return DELETE; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 49 "compiler/lex.l"
+#line 47 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return DO; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 50 "compiler/lex.l"
+#line 48 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return ELSE; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 51 "compiler/lex.l"
+#line 49 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return EXPORT; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 52 "compiler/lex.l"
+#line 50 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return EXTENDS; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 53 "compiler/lex.l"
+#line 51 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return FINALLY; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 54 "compiler/lex.l"
+#line 52 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return FOR; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 55 "compiler/lex.l"
+#line 53 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return FUNCTION; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 56 "compiler/lex.l"
+#line 54 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return IF; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 57 "compiler/lex.l"
+#line 55 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return IMPORT; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 58 "compiler/lex.l"
+#line 56 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return IN; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 59 "compiler/lex.l"
+#line 57 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return INSTANCEOF; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 60 "compiler/lex.l"
+#line 58 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return LET; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 61 "compiler/lex.l"
+#line 59 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return NEW; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 62 "compiler/lex.l"
+#line 60 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return OF; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 63 "compiler/lex.l"
+#line 61 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return RETURN; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 64 "compiler/lex.l"
+#line 62 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return SUPER; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 65 "compiler/lex.l"
+#line 63 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return SWITCH; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 66 "compiler/lex.l"
+#line 64 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return THIS; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 67 "compiler/lex.l"
+#line 65 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return THROW; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 68 "compiler/lex.l"
+#line 66 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return TRY; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 69 "compiler/lex.l"
+#line 67 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return TYPEOF; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 70 "compiler/lex.l"
+#line 68 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return VAR; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 71 "compiler/lex.l"
+#line 69 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return VOID; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 72 "compiler/lex.l"
+#line 70 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return WHILE; }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 73 "compiler/lex.l"
+#line 71 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return WITH; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 74 "compiler/lex.l"
+#line 72 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return YIELD; }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 75 "compiler/lex.l"
+#line 73 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return ENUM; }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 76 "compiler/lex.l"
+#line 74 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return AWAIT; }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 77 "compiler/lex.l"
+#line 75 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return IMPLEMENTS; }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 78 "compiler/lex.l"
+#line 76 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return INTERFACE; }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 79 "compiler/lex.l"
+#line 77 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return PACKAGE; }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 80 "compiler/lex.l"
+#line 78 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return PRIVATE; }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 81 "compiler/lex.l"
+#line 79 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return PROTECTED; }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 82 "compiler/lex.l"
+#line 80 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return PUBLIC; }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 83 "compiler/lex.l"
+#line 81 "compiler/lex.l"
 { count(); printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return LITERAL_NULL; }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 84 "compiler/lex.l"
+#line 82 "compiler/lex.l"
 { count(); yylval.string_value = "true"; printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return LITERAL_TRUE; }
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 85 "compiler/lex.l"
+#line 83 "compiler/lex.l"
 { count(); yylval.string_value = "false"; printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return LITERAL_FALSE; }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 86 "compiler/lex.l"
+#line 84 "compiler/lex.l"
 { count(); yylval.string_value = "undefined"; printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return LITERAL_UNDEFINED; }
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 87 "compiler/lex.l"
+#line 85 "compiler/lex.l"
 { count(); yylval.string_value = "NaN"; printf("reserved,%d,%lu,%d\n", line, strlen(yytext), column); return LITERAL_NAN; }
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 88 "compiler/lex.l"
+#line 86 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return UNARY_ADD; }
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 89 "compiler/lex.l"
+#line 87 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return UNARY_SUBTRACT; }
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 90 "compiler/lex.l"
+#line 88 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return LOGICAL_NOT; }
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 91 "compiler/lex.l"
+#line 89 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return MULTIPLY; }
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 92 "compiler/lex.l"
+#line 90 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return DIVIDE; }
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 93 "compiler/lex.l"
+#line 91 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return MODULO; }
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 94 "compiler/lex.l"
+#line 92 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return ADD; }
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 95 "compiler/lex.l"
+#line 93 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return SUBTRACT; }
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 96 "compiler/lex.l"
+#line 94 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return EQUAL; }
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 97 "compiler/lex.l"
+#line 95 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return NOT_EQUAL; }
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 98 "compiler/lex.l"
+#line 96 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return EXACTLY_EQUAL; }
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 99 "compiler/lex.l"
+#line 97 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return NOT_EXACTLY_EQUAL; }
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 100 "compiler/lex.l"
+#line 98 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return LEFT_SHIFT; }
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 101 "compiler/lex.l"
+#line 99 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return SIGNED_RIGHT_SHIFT; }
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
-#line 102 "compiler/lex.l"
+#line 100 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return UNSIGNED_RIGHT_SHIFT; }
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
-#line 103 "compiler/lex.l"
+#line 101 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return LESS_THAN; }
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
-#line 104 "compiler/lex.l"
+#line 102 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return GREATER_THAN; }
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 105 "compiler/lex.l"
+#line 103 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return LESS_THAN_OR_EQUAL; }
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
-#line 106 "compiler/lex.l"
+#line 104 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return GREATER_THAN_OR_EQUAL; }
 	YY_BREAK
 case 72:
 YY_RULE_SETUP
-#line 107 "compiler/lex.l"
+#line 105 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return QUESTION_MARK; }
 	YY_BREAK
 case 73:
 YY_RULE_SETUP
-#line 108 "compiler/lex.l"
+#line 106 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return COLON; }
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
-#line 109 "compiler/lex.l"
+#line 107 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return LOGICAL_AND; }
 	YY_BREAK
 case 75:
 YY_RULE_SETUP
-#line 110 "compiler/lex.l"
+#line 108 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return LOGICAL_OR; }
 	YY_BREAK
 case 76:
 YY_RULE_SETUP
-#line 111 "compiler/lex.l"
+#line 109 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return BITWISE_AND; }
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
-#line 112 "compiler/lex.l"
+#line 110 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return BITWISE_OR; }
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
-#line 113 "compiler/lex.l"
+#line 111 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return BITWISE_XOR; }
 	YY_BREAK
 case 79:
 YY_RULE_SETUP
-#line 114 "compiler/lex.l"
+#line 112 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return BITWISE_NOT; }
 	YY_BREAK
 case 80:
 YY_RULE_SETUP
-#line 115 "compiler/lex.l"
+#line 113 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return ASSIGNMENT; }
 	YY_BREAK
 case 81:
 YY_RULE_SETUP
-#line 116 "compiler/lex.l"
+#line 114 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return ADDITION_ASSIGNMENT; }
 	YY_BREAK
 case 82:
 YY_RULE_SETUP
-#line 117 "compiler/lex.l"
+#line 115 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return SUBTRACTION_ASSIGNMENT; }
 	YY_BREAK
 case 83:
 YY_RULE_SETUP
-#line 118 "compiler/lex.l"
+#line 116 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return MULTIPLICATION_ASSIGNMENT; }
 	YY_BREAK
 case 84:
 YY_RULE_SETUP
-#line 119 "compiler/lex.l"
+#line 117 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return DIVISION_ASSIGNMENT; }
 	YY_BREAK
 case 85:
 YY_RULE_SETUP
-#line 120 "compiler/lex.l"
+#line 118 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return MODULUS_ASSIGNMENT; }
 	YY_BREAK
 case 86:
 YY_RULE_SETUP
-#line 121 "compiler/lex.l"
+#line 119 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return EXPONENTIATION_ASSIGNMENT; }
 	YY_BREAK
 case 87:
 YY_RULE_SETUP
-#line 122 "compiler/lex.l"
+#line 120 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return LEFT_SHIFT_ASSIGNMENT; }
 	YY_BREAK
 case 88:
 YY_RULE_SETUP
-#line 123 "compiler/lex.l"
+#line 121 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return SIGNED_RIGHT_SHIFT_ASSIGNMENT; }
 	YY_BREAK
 case 89:
 YY_RULE_SETUP
-#line 124 "compiler/lex.l"
+#line 122 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return UNSIGNED_RIGHT_SHIFT_ASSIGNMENT; }
 	YY_BREAK
 case 90:
 YY_RULE_SETUP
-#line 125 "compiler/lex.l"
+#line 123 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return BITWISE_AND_ASSIGNMENT; }
 	YY_BREAK
 case 91:
 YY_RULE_SETUP
-#line 126 "compiler/lex.l"
+#line 124 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return BITWISE_XOR_ASSIGNMENT; }
 	YY_BREAK
 case 92:
 YY_RULE_SETUP
-#line 127 "compiler/lex.l"
+#line 125 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return BITWISE_OR_ASSIGNMENT; }
 	YY_BREAK
 case 93:
 YY_RULE_SETUP
-#line 128 "compiler/lex.l"
+#line 126 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return ARROW_FUNCTION; }
 	YY_BREAK
 case 94:
 YY_RULE_SETUP
-#line 129 "compiler/lex.l"
+#line 127 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return RIGHT_PAREN; }
 	YY_BREAK
 case 95:
 YY_RULE_SETUP
-#line 130 "compiler/lex.l"
+#line 128 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return LEFT_PAREN; }
 	YY_BREAK
 case 96:
 YY_RULE_SETUP
-#line 131 "compiler/lex.l"
+#line 129 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return RIGHT_BRACE; }
 	YY_BREAK
 case 97:
 YY_RULE_SETUP
-#line 132 "compiler/lex.l"
+#line 130 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return LEFT_BRACE; }
 	YY_BREAK
 case 98:
 YY_RULE_SETUP
-#line 133 "compiler/lex.l"
+#line 131 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return RIGHT_BRACKET; }
 	YY_BREAK
 case 99:
 YY_RULE_SETUP
-#line 134 "compiler/lex.l"
+#line 132 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return LEFT_BRACKET; }
 	YY_BREAK
 case 100:
 YY_RULE_SETUP
-#line 135 "compiler/lex.l"
+#line 133 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return COMMA; }
 	YY_BREAK
 case 101:
 YY_RULE_SETUP
-#line 136 "compiler/lex.l"
+#line 134 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return FULL_STOP; }
 	YY_BREAK
 case 102:
 YY_RULE_SETUP
-#line 137 "compiler/lex.l"
+#line 135 "compiler/lex.l"
 { count(); printf("operator,%d,%lu,%d\n", line, strlen(yytext), column); return ELLIPSIS; }
 	YY_BREAK
 case 103:
 YY_RULE_SETUP
-#line 138 "compiler/lex.l"
+#line 136 "compiler/lex.l"
 { count(); return SEMICOLON; }
 	YY_BREAK
 case 104:
 YY_RULE_SETUP
-#line 139 "compiler/lex.l"
+#line 137 "compiler/lex.l"
 { count(); return DOUBLE_QUOTE; }
 	YY_BREAK
 case 105:
 YY_RULE_SETUP
-#line 140 "compiler/lex.l"
+#line 138 "compiler/lex.l"
 { count(); return SINGLE_QUOTE; }
 	YY_BREAK
 case 106:
 YY_RULE_SETUP
-#line 142 "compiler/lex.l"
+#line 140 "compiler/lex.l"
 { yylval.double_value = atof(yytext); count(); return VALUE_DOUBLE; }
 	YY_BREAK
 case 107:
 YY_RULE_SETUP
-#line 143 "compiler/lex.l"
+#line 141 "compiler/lex.l"
 { yylval.string_value = strdup(yytext); count(); printf("digit,%d,%lu,%d\n", line, strlen(yytext), column); return VALUE_INTEGER; }
 	YY_BREAK
 case 108:
 /* rule 108 can match eol */
 YY_RULE_SETUP
-#line 144 "compiler/lex.l"
+#line 142 "compiler/lex.l"
 {
                                       yylval.string_value = strdup(yytext);
                                       count();
@@ -1505,7 +1503,7 @@ YY_RULE_SETUP
 case 109:
 /* rule 109 can match eol */
 YY_RULE_SETUP
-#line 149 "compiler/lex.l"
+#line 147 "compiler/lex.l"
 {
                                       yylval.string_value = strdup(yytext);
                                       count();
@@ -1535,7 +1533,7 @@ YY_RULE_SETUP
  */
 case 110:
 YY_RULE_SETUP
-#line 178 "compiler/lex.l"
+#line 176 "compiler/lex.l"
 {
                                       BEGIN(MULTILINE_STRING);
                                       stringbuffer = strcat(NULL, malloc(sizeof(char*)));
@@ -1547,7 +1545,7 @@ YY_RULE_SETUP
  */
 case 111:
 YY_RULE_SETUP
-#line 188 "compiler/lex.l"
+#line 186 "compiler/lex.l"
 {
                                       BEGIN(INITIAL);
                                       count();
@@ -1559,17 +1557,17 @@ YY_RULE_SETUP
 case 112:
 /* rule 112 can match eol */
 YY_RULE_SETUP
-#line 195 "compiler/lex.l"
+#line 193 "compiler/lex.l"
 { count(); }
 	YY_BREAK
 case 113:
 YY_RULE_SETUP
-#line 196 "compiler/lex.l"
+#line 194 "compiler/lex.l"
 { stringbuffer = strcat(stringbuffer, yytext); }
 	YY_BREAK
 case 114:
 YY_RULE_SETUP
-#line 198 "compiler/lex.l"
+#line 196 "compiler/lex.l"
 {
                                       count();
                                       yylval.string_value = strdup(yytext);
@@ -1580,27 +1578,27 @@ YY_RULE_SETUP
 case 115:
 /* rule 115 can match eol */
 YY_RULE_SETUP
-#line 205 "compiler/lex.l"
+#line 203 "compiler/lex.l"
 /*{ return LINE_FEED; }*/ { count(); }
 	YY_BREAK
 case 116:
 YY_RULE_SETUP
-#line 206 "compiler/lex.l"
+#line 204 "compiler/lex.l"
 /*{ return CARRIAGE_RETURN; }*/ { count(); }
 	YY_BREAK
 case 117:
 YY_RULE_SETUP
-#line 208 "compiler/lex.l"
+#line 206 "compiler/lex.l"
 { count(); } /* spaces and tabs, do nothing */
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(MULTILINE_STRING):
-#line 209 "compiler/lex.l"
+#line 207 "compiler/lex.l"
 { return END_OF_FILE; } /* <<EOF>> */
 	YY_BREAK
 case 118:
 YY_RULE_SETUP
-#line 210 "compiler/lex.l"
+#line 208 "compiler/lex.l"
 {
                                       count();
                                       yyerror("Unknown character");
@@ -1608,10 +1606,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 119:
 YY_RULE_SETUP
-#line 215 "compiler/lex.l"
+#line 213 "compiler/lex.l"
 ECHO;
 	YY_BREAK
-#line 1615 "lex.yy.c"
+#line 1613 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -2610,7 +2608,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 215 "compiler/lex.l"
+#line 213 "compiler/lex.l"
 
 
 

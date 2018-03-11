@@ -1,16 +1,14 @@
 %option noyywrap
 %{
     #include "grammer.tab.h"
-    #include "SyntaxTree/Includes.hpp"
-    #include <memory>
-    
+    #include <cstdlib>
     char* stringbuffer;
     int column = 0;
     int line = 0;
     char error_buffer[256];
-    variables *identifier(char *identifier_name);
-
-void count()
+   // variables *identifier(char *identifier_name);
+extern void yyerror(const char *s);
+void count();
 %}
 alpha       [a-zA-Z]
 name        {alpha}([0-9]*{alpha}*)+

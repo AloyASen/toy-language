@@ -170,15 +170,15 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 135 "compiler/grammer.y" /* yacc.c:1909  */
+#line 133 "compiler/grammer.y" /* yacc.c:1909  */
 
-    int int_value;
+int int_value;
     double double_value;
     char* string_value;
     bool bool_value;
     char *char_value;
 
-    variables *store;
+//    variables *store;
 
 #line 184 "grammer.tab.h" /* yacc.c:1909  */
 };

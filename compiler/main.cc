@@ -2,8 +2,6 @@
 #include <memory>
 #include "SyntaxTree/SyntaxTree.hpp"
 extern int yyparse();
-extern int yylineno;
-extern std::unique_ptr<compiler::SyntaxTree> root;
 int main()
 {
 	int result =yyparse();
@@ -14,7 +12,6 @@ int main()
 		std::cout<< "the input is valid"<<std::endl;
 	}
 
-	std::cout<< root -> toCode() <<std::endl;
-	std::cout<< "coded -> " << yylineno <<" lines successfully" <<std::endl;
+	std::cout<< "coded -> lines successfully" <<std::endl;
 	return result;
 }
