@@ -3254,7 +3254,7 @@ yyreturn:
 #line 1262 "compiler/grammer.y" /* yacc.c:1906  */
 
 
-void yyerror(char *s) {
+void yyerror(const char *s) {
     fprintf(stderr, "%s\n", s);
 }
 
