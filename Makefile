@@ -1,3 +1,5 @@
+#this build system is deprecated and we have shifted to CMAKE 
+
 all:
 	$(MAKE) grammer
 	$(MAKE)	lex
