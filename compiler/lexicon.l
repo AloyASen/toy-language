@@ -1,6 +1,6 @@
 %option noyywrap
 %{
-    #include "grammer.tab.h"
+    #include "parser.hh"
     #include "SyntaxTree/Includes.hpp"
     #include <memory>
 %}
