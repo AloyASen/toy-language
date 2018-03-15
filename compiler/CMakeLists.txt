@@ -31,3 +31,10 @@ add_executable(
 
 target_link_libraries(parser parse)
 
+install(TARGETS parser
+    RUNTIME DESTINATION bin
+    )
+# Library
+# Note: may not work on windows
+install (TARGETS parse
+    ARCHIVE DESTINATION lib)
